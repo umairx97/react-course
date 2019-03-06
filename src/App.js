@@ -22,10 +22,10 @@ class Umair extends Component {
   }
 }
 
-const Umair = (props) => {
-  return (
-    <h1>
-      Hello my name is {props.name} my id is {props.id} and my profession is {props.Profession}
-    </h1>
-  )
-}
+// const Umair = (props) => {
+//   return (
+//     <h1>
+//       Hello my name is {props.name} my id is {props.id} and my profession is {props.Profession}
+//     </h1>
+//   )
+// }
