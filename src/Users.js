@@ -32,6 +32,31 @@ class Users extends Component {
     return (
       <div>
         {User.map(item => {
+            return (
+
+                <div key = {item.id}> 
+                <UserList name = {item.name} profession = {item.profession} image = {item.imageUrl}/>
+                </div>
+            )
+        })}
+      </div>
+
+    );
+  }
+}
+
+
+const UserList = (props) => {
+    return (
+        <h1>
+
+            {props.name}
+            {props.profession}
+            <img src = {props.image}/>
+
+
+
+            {/* {User.map(item => {
           return (
             <div className="card" key = {item.id}>
               <img src={item.imageUrl} style={{ width: "100%" }} alt = {item.name} />
@@ -43,13 +68,10 @@ class Users extends Component {
               </div>
             </div>
           );
-        })}
-      </div>
-
-    );
-  }
+        })} */}
+        </h1>
+    )
 }
-
 
 
 export default Users;
