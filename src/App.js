@@ -1,32 +1,20 @@
-import React,{Component} from "react";
-import './App.css'
+import React, { Component } from "react";
+import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <Umair name="asdas" id="2101" Profession="developer" />
+      <div className="card">
+        <img src="/images/img_avatar.png" alt="Avatar" style = {{width: '100%'}} />
+        <div className="container">
+          <h4>
+            <b>John Doe</b>
+          </h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default App;
-
-class Umair extends Component {
-  render() {
-    return (
-      <h1>
-        Hello my name is {this.props.name} my id is {this.props.id} and my profession is{" "}
-        {this.props.Profession}
-        {" "}
-      </h1>
-    );
-  }
-}
-
-// const Umair = (props) => {
-//   return (
-//     <h1>
-//       Hello my name is {props.name} my id is {props.id} and my profession is {props.Profession}
-//     </h1>
-//   )
-// }
