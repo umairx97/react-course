@@ -7,6 +7,8 @@
 //     }
 // }
 
+// ==========================================================
+
 // const {brand, manufacturer, model} = Car
 
 // console.log(brand, manufacturer,model)
@@ -15,6 +17,7 @@
 
 // const Users = [1, 'umair', 2, 'Ashir']
 
+// ==============================================================
 // const Users = [
 //     {
 //         name: 'umair',
@@ -28,11 +31,12 @@
 
 // console.log('Users', Users)
 
+// ===================================================================================
+
 // fetch('https://jsonplaceholder.typicode.com/todos/1')
 //   .then(response => response.json())
 //   .then(json => console.log(json))
 //   .catch(err => console.log(err, 'Cannot complete'))
-
 
 // const promise = new Promise((res, rej) => {
 //   setInterval(() => {
@@ -41,4 +45,3 @@
 // });
 
 // promise.then(() => console.log('finished'))
-
