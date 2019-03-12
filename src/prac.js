@@ -28,10 +28,10 @@
 
 // console.log('Users', Users)
 
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
-  .catch(err => console.log(err, 'Cannot complete'))
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+//   .catch(err => console.log(err, 'Cannot complete'))
 
 
 // const promise = new Promise((res, rej) => {
