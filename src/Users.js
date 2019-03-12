@@ -24,7 +24,7 @@ const User = [
     name: "umair",
     profession: "racer",
     imageUrl: "/images/img_avatar.png"
-  },
+  }
 ];
 
 class Users extends Component {
@@ -32,31 +32,29 @@ class Users extends Component {
     return (
       <div>
         {User.map(item => {
-            return (
-
-                <div key = {item.id}> 
-                <UserList name = {item.name} profession = {item.profession} image = {item.imageUrl}/>
-                </div>
-            )
+          return (
+            <div key={item.id}>
+              <UserList
+                name={item.name}
+                profession={item.profession}
+                image={item.imageUrl}
+              />
+            </div>
+          );
         })}
       </div>
-
     );
   }
 }
 
+const UserList = props => {
+  return (
+    <h1>
+      {props.name}
+      {props.profession}
+      <img src={props.image} />
 
-const UserList = (props) => {
-    return (
-        <h1>
-
-            {props.name}
-            {props.profession}
-            <img src = {props.image}/>
-
-
-
-            {/* {User.map(item => {
+      {/* {User.map(item => {
           return (
             <div className="card" key = {item.id}>
               <img src={item.imageUrl} style={{ width: "100%" }} alt = {item.name} />
@@ -69,9 +67,8 @@ const UserList = (props) => {
             </div>
           );
         })} */}
-        </h1>
-    )
-}
-
+    </h1>
+  );
+};
 
 export default Users;
