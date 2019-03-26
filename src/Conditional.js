@@ -3,33 +3,22 @@ import "./App.css";
 
 class Conditional extends Component {
   state = {
-    name: "Ashir",
-    data: []
+    time: ""
   };
 
-  handleName = () => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
-      .then(response => response.json())
-      .then(json =>
+  componentDidMount = () => {
+    setInterval(()=> {
         this.setState({
-          data: [...this.state.data, json]
+            time: new Date().getSeconds()
         })
-      );
+    }, 1000)
   };
 
   render() {
-    return (
-      <div>
-        <button className="btn">Click me to change state</button>
-
-        {/* <br />
-        {this.state.name}
-
-        {this.state.data.map(item => (
-          <p key={item.id}>{item.title}</p>
-        ))} */}
-      </div>
-    );
+      console.log(this.state.time)
+    return <div>
+        {this.state.time}
+    </div>;
   }
 }
 
