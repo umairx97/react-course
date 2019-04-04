@@ -5,21 +5,12 @@
 Write a code that prints your name in the console by taking the name as an argument to a method
 */
 
-// const getName = (name) => {
-//     console.log(name)
-// }
-
-// getName('Umair')
-
 // *****************************************************************************************************
 // ******************************************************************************************************
 /* TASK NUMBER 2 
 
 Write an arrow function to print your name in a single line of code 
 */
-
-// const getName = name => console.log(name);
-// getName('Ashir')
 
 // *****************************************************************************************************
 // ******************************************************************************************************
@@ -96,8 +87,6 @@ Take the array above and print the length of the array to the console
 // *****************************************************************************************************
 // ******************************************************************************************************
 /* TASK NUMBER 8
-
-
 
  Take the above object and print a sentence using template strings as below 
 
