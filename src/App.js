@@ -1,20 +1,26 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import User from './User';
 
-const App = () => {
-  return (
-    <div>
-      <div className="card">
-        <img src="/images/img_avatar.png" alt="Avatar" style = {{width: '100%'}} />
-        <div className="container">
-          <h4>
-            <b>John Doe</b>
-          </h4>
-          <p>Architect & Engineer</p>
-        </div>
+
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        Hello my name is {this.props.isLoggedin}
+        <User/>
       </div>
-    </div>
-  );
-};
+    )
+  }
+}
 
-export default App;
+
+const mapStateToProps = (state) => {
+  return { 
+    isLoggedin: state.user_reducer.isLoggedin
+  }
+
+}
+
+export default connect(mapStateToProps,null)(App)
