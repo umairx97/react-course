@@ -1,26 +1,44 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import User from './User';
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { userAction } from "./Store/actions/userAction";
 
 class App extends Component {
+  handleClick = () => {
+    const obj = {
+      name: "Umair",
+      age: 20,
+      profession: "Developer"
+    };
+    this.props.abc(obj);
+  };
 
   render() {
+    console.log(this.props);
     return (
       <div>
-        Hello my name is {this.props.isLoggedin}
-        <User/>
+        Hello my name is {this.props.myName}
+        <button onClick={this.handleClick}>Click me to change the state</button>
       </div>
-    )
+    );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    myName: state.user_reducer.name,
+    currentUser: state.user_reducer.currentUser
+  };
+};
 
-const mapStateToProps = (state) => {
-  return { 
-    isLoggedin: state.user_reducer.isLoggedin
-  }
+const mapDipatchToProps = dispatch => {
+  return {
+    abc: data => {
+      dispatch(userAction(data));
+    }
+  };
+};
 
-}
-
-export default connect(mapStateToProps,null)(App)
+export default connect(
+  mapStateToProps,
+  mapDipatchToProps
+)(App);
