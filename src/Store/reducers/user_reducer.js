@@ -12,7 +12,7 @@ export const user_reducer = (state = initialState, action) => {
         isAuth: true,
         currentUser: action.data
       };
-
+      
     default:
       return state;
   }

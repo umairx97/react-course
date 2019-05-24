@@ -1,44 +1,54 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { userAction } from "./Store/actions/userAction";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-class App extends Component {
-  handleClick = () => {
-    const obj = {
-      name: "Umair",
+export default class App extends Component {
+
+  state = {
+    users: []
+  }
+
+
+  componentDidMount() {
+    axios.get('https://express-heroku-dev.herokuapp.com/users').then(res => {
+      this.setState({ 
+        users: res.data.data
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  send = () => {
+    axios.post('https://express-heroku-dev.herokuapp.com/api/users', {
+      username: 'AshirArain',
+      email: 'ashirarain@axiom.com',
       age: 20,
-      profession: "Developer"
-    };
-    this.props.abc(obj);
-  };
+      profession: 'Developer'
+    }).then(res => {
+      this.setState({ 
+        users: [...this.state.users, res.data.data]
+      })
+    }).catch(err => console.log(err.response.data))
+  }
 
   render() {
-    console.log(this.props);
+    console.table(this.state.users)
+
+    const {users} = this.state;
     return (
       <div>
-        Hello my name is {this.props.myName}
-        <button onClick={this.handleClick}>Click me to change the state</button>
+      
+
+
+      {users.map(item => ( 
+        <div key = {item._id}>
+          <h1>Username: {item.username}</h1>
+          <h2>Email: {item.email}</h2>
+          <h2>Profession: {item.profession}</h2>
+        </div>
+      ))}
+        <button onClick={this.send}>Click me to post data</button>
       </div>
-    );
+    )
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    myName: state.user_reducer.name,
-    currentUser: state.user_reducer.currentUser
-  };
-};
-
-const mapDipatchToProps = dispatch => {
-  return {
-    abc: data => {
-      dispatch(userAction(data));
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDipatchToProps
-)(App);

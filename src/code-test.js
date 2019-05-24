@@ -20,10 +20,6 @@ Write an arrow function that takes two arguments as numbers and returns the sum 
 (The arrow function should be in a single line)
 */
 
-// const addSum = (a,b) => {
-//     return a + b
-// }
-// console.log(addSum(5,6))
 
 // *****************************************************************************************************
 // ******************************************************************************************************
@@ -34,15 +30,6 @@ if the condition returns true the console should print "equal" and if the condit
 console should write not "equal" 
 */
 
-// const addSum = (a,b) => {
-//     if(a === b){
-//         console.log('Equal')
-//     } else {
-//         console.log('Not equal')
-//     }
-// }
-
-// addSum(11, 11);
 
 // *****************************************************************************************************
 // ******************************************************************************************************
@@ -51,10 +38,6 @@ console should write not "equal"
 Refactor the code written in TASK 4 and do the same thing but by using ternary operator and in a single line
 */
 
-// const a = 10;
-// const b = 20;
-
-// a === b ? console.log('Equal') : console.log('Not equal')
 
 // *****************************************************************************************************
 // ******************************************************************************************************
@@ -63,13 +46,6 @@ Refactor the code written in TASK 4 and do the same thing but by using ternary o
 Create an array of names and add a name at the end of the array by using array methods also add name 
 at the start of an array 
 */
-
-// const arr = ['Umair', 'Asad']
-
-// arr.push('Ashir')
-// arr.unshift('Shahbaz')
-
-// console.log(arr)
 
 // *****************************************************************************************************
 // ******************************************************************************************************
@@ -80,15 +56,12 @@ let arr = ['Umair', 'Asad'];
 Take the array above and print the length of the array to the console
 */
 
-// const arr = ['Umair', 'Asad']
-
-// console.log(arr.length)
 
 // *****************************************************************************************************
 // ******************************************************************************************************
 /* TASK NUMBER 8
 
- Take the above object and print a sentence using template strings as below 
+ Take the below object and print a sentence using template strings as below 
 
  (My name is Ashir and my profession is Developer)
 */
@@ -99,7 +72,6 @@ Take the array above and print the length of the array to the console
 //     id: '1'
 // }
 
-// console.log(`My name is ${obj.name} My profession is ${obj.profession} `)
 
 // *****************************************************************************************************
 // ******************************************************************************************************
@@ -111,13 +83,6 @@ is greater than 5. and should print "Add more students" if length is less than 5
 Do the above task with the use of ternary operator
 */
 
-// const students = ["Umair", "Asad", "Shahbaz", "Ashir", "Hamza", "Moomal"];
-
-// const getStudents = students => {
-//   students.length > 5
-//     ? console.log("Too many students")
-//     : console.log("Add more students");
-// };
 
 // getStudents(students);
 // *****************************************************************************************************
@@ -129,8 +94,3 @@ Write an arrow function that takes two strings as an argument and checks if thos
 If they are equal the console should print "equal" and if not the console should print "not equal"
 */
 
-// const getStrings = (a, b) => {
-//   a === b ? console.log("Equal") : console.log("Not equal");
-// };
-
-// getStrings('Umair', 'abcde')
