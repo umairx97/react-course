@@ -1,53 +1,60 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-
+import React, { Component } from 'react'
 export default class App extends Component {
-
   state = {
-    users: []
+    data: [
+      {
+        elem: 'Facebook',
+        Facebook: {
+          attr: ['Followers', 'Likes', 'Reactions']
+        }
+      },
+
+      {
+        elem: 'Instagram',
+        Instagram: {
+          attr: ['Views', 'Likes', 'Followers']
+        }
+      },
+    ],
+
+    currVal: ''
   }
 
 
-  componentDidMount() {
-    axios.get('https://express-heroku-dev.herokuapp.com/users').then(res => {
-      this.setState({ 
-        users: res.data.data
-      })
-    }).catch(err => {
-      console.log(err)
-    })
-  }
 
-  send = () => {
-    axios.post('https://express-heroku-dev.herokuapp.com/api/users', {
-      username: 'AshirArain',
-      email: 'ashirarain@axiom.com',
-      age: 20,
-      profession: 'Developer'
-    }).then(res => {
-      this.setState({ 
-        users: [...this.state.users, res.data.data]
-      })
-    }).catch(err => console.log(err.response.data))
-  }
 
   render() {
-    console.table(this.state.users)
-
-    const {users} = this.state;
+    const { data, currVal } = this.state
+    const attrs = this.state.data.filter(item => item[currVal]);
+    console.log(this.state)
     return (
       <div>
-      
+
+        <select onChange={(ev) => this.setState({ currVal: ev.target.value })}>
+          <option disabled value="Select">Select</option>
+          {data.map(item => (
+            <option key={item.elem}>{item.elem}</option>
+          ))
+          }
+        </select>
+
+        <select onChange={(ev) => this.setState({ secondVal: ev.target.value })}>
+
+          {attrs.map(item => {
+            return item[currVal].attr.map(item => (
+              <option key={item} value={item}>{item}</option>
+            ))
+          })}
+
+        </select>
 
 
-      {users.map(item => ( 
-        <div key = {item._id}>
-          <h1>Username: {item.username}</h1>
-          <h2>Email: {item.email}</h2>
-          <h2>Profession: {item.profession}</h2>
-        </div>
-      ))}
-        <button onClick={this.send}>Click me to post data</button>
+        
+
+
+
+
+
       </div>
     )
   }
